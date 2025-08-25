@@ -1,0 +1,44 @@
+node_modules/
+lib/
+coverage/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Env & secrets
+.env
+.env.*
+.env*.local
+supabase/.env
+*.pem
+
+# Supabase local state
+supabase/.branches
+supabase/.temp
+supabase/logs
+supabase/seed.sql
+
+# Editors/OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Build outputs (if used in monorepo)
+.next/
+out/
+dist/
+build/
+
+# Temp
+tmp/
+temp/ 

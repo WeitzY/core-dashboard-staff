@@ -1,0 +1,8 @@
+---
+alwaysApply: true
+---
+- Always consult `core-hotels-chat.md` before writing code.
+- All new AI chat logic must be implemented using LangGraph in the `src/graphs/` directory.
+- Use the existing pure async helper functions in `src/services/supabase/` for all database interactions. Do not write direct database queries in the graph nodes.
+- All Supabase Edge Functions must be written in TypeScript for the Deno runtime.
+- Ensure all new database queries and RLS policies are filtered by `hotel_id` to maintain data isolation.

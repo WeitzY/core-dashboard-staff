@@ -1,0 +1,26 @@
+# Supabase
+.branches
+.temp
+.auth
+.storage
+.inbucket
+.realtime
+.vector
+
+# dotenvx
+.env.keys
+.env.local
+.env.*.local
+.env.production
+.env.staging
+
+# Function artifacts
+functions/_temp/
+functions/_deploy/
+functions/node_modules/
+functions/**/.vscode/
+
+# Database backups and dumps
+*.sql.backup
+*.dump
+*.psql

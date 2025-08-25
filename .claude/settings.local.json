@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(mkdir:*)",
+      "Bash(npm run build:*)",
+      "Bash(rg:*)",
+      "Bash(find:*)",
+      "Bash(rm:*)",
+      "Bash(npm run lint)"
+    ],
+    "deny": []
+  }
+}
