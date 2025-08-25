@@ -25,23 +25,6 @@ curl -X POST "$SUPABASE_EDGE_URL/chat-handler" \
   }'
 ```
 
-## Run locally
-Prereqs: Supabase CLI, OpenAI key.
-
-```powershell
-# Windows PowerShell
-supabase start
-$env:OPENAI_API_KEY="sk-..."
-supabase functions serve --env-file supabase/.env
-```
-
-## Deploy
-```powershell
-supabase functions deploy chat-handler
-supabase functions deploy save-items
-supabase functions deploy save-faq
-```
-
 ## Tech
 - Supabase (Postgres, Edge Functions, Realtime, Auth)
 - Deno runtime for functions
@@ -57,7 +40,6 @@ supabase functions deploy save-faq
 - Handlers: `supabase/functions/*/index.ts`
 - Chat pipeline: `supabase/functions/chat-handler/*`
 - Shared helpers: `supabase/functions/_shared/*`
-- Schema notes: `tables-definitions.md`
 
 ## Environment
 - `SUPABASE_URL`, `SERVICE_ROLE_KEY`, `OPENAI_API_KEY`
