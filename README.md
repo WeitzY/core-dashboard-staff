@@ -1,19 +1,35 @@
 # Velin Core — Serverless AI Concierge (Backend)
 
-Short, production‑style backend built for portfolio review. It powers a simple, stateless chat flow: a guest sends a message, the AI answers from hotel Items/FAQs, and optionally creates a staff note when the AI can help. No long conversation history.
+👉 **[🌐 Staff Dashboard Live](https://staff-dashboard-beryl.vercel.app/login)** | [📂 Staff Dashboard Repo](https://github.com/WeitzY/staff-dashboard)
+👉 **[💬 Guest Chat Live](https://chat-dashboard-tau-seven.vercel.app/)** | [📂 Guest Chat Repo](https://github.com/WeitzY/chat-dashboard)
 
-## What matters for reviewers
-- **Edge Functions (Deno)**: `supabase/functions/chat-handler`, `save-items`, `save-faq`.
-- **Data isolation**: Every DB op is scoped by `hotel_id` with RLS.
-- **LLM usage**: OpenAI for short English summaries + embeddings; pgvector for similarity search.
-- **Minimal surface area**: A few small, readable handlers with shared helpers in `supabase/functions/_shared`.
+---
+
+## About
+
+**Backend for Velin**, a production-style AI concierge system:
+Guest sends a message → AI answers from hotel Items/FAQs → optional staff note created.
+*(No long conversation history for simplicity in demo scope.)*
+
+---
+
+## What this showcases
+
+* **Edge Functions (Deno)**: `chat-handler`, `save-items`, `save-faq`
+* **Data isolation**: Every DB operation scoped by `hotel_id` with RLS
+* **LLM usage**: OpenAI for English summaries + embeddings; **pgvector** for similarity search
+* **Minimal surface area**: Few small, readable handlers with shared helpers in `_shared`
+
+---
 
 ## Live entry points
-- `chat-handler` (POST): validate → vector search (items + faqs) → AI reply → write messages → optional staff note.
-- `save-items` (POST): upsert item + embedding.
-- `save-faq` (POST): upsert FAQ + embedding.
 
-Example (chat):
+* **`chat-handler` (POST)** → validate → vector search (items + FAQs) → AI reply → write messages → optional staff note
+* **`save-items` (POST)** → upsert item + embedding
+* **`save-faq` (POST)** → upsert FAQ + embedding
+
+**Example (chat):**
+
 ```bash
 curl -X POST "$SUPABASE_EDGE_URL/chat-handler" \
   -H "Content-Type: application/json" \
@@ -25,26 +41,37 @@ curl -X POST "$SUPABASE_EDGE_URL/chat-handler" \
   }'
 ```
 
+---
+
 ## Tech
-- Supabase (Postgres, Edge Functions, Realtime, Auth)
-- Deno runtime for functions
-- OpenAI (responses + embeddings)
-- pgvector for similarity search
-- TypeScript + Zod validation
 
-## Intentional simplifications
-- Stateless per message; no long chat memory
-- Basic logging; no PII; CORS is open for demo (restrict in prod)
+* Supabase (Postgres, Edge Functions, Realtime, Auth)
+* Deno runtime for functions
+* OpenAI (responses + embeddings)
+* pgvector (similarity search)
+* TypeScript + Zod validation
 
-## Where to look in code
-- Handlers: `supabase/functions/*/index.ts`
-- Chat pipeline: `supabase/functions/chat-handler/*`
-- Shared helpers: `supabase/functions/_shared/*`
+---
 
-## Environment
-- `SUPABASE_URL`, `SERVICE_ROLE_KEY`, `OPENAI_API_KEY`
+## Notes & scope
 
-## Notes about src/ and root package.json
-- `src/` and the root `package.json` reflect a more advanced, paused LangGraph version of the system (work‑in‑progress) and are not used by the live demo. For recruiters/reviewers, you can safely ignore `src/` and focus on the Supabase Edge Functions under `supabase/functions/*`.
+* Stateless per message; no long chat memory
+* Basic logging; no PII
+* CORS open for demo (restrict in production)
 
+---
 
+## Where to look
+
+```
+supabase/functions/*/index.ts   → Handlers
+supabase/functions/chat-handler → Chat pipeline
+supabase/functions/_shared/*    → Shared helpers
+```
+
+---
+
+## Important note
+
+`src/` and root `package.json` reflect an **advanced, paused LangGraph version** of the system (WIP).
+They are **not used in the live demo**. For recruiters/reviewers, focus on `supabase/functions/*`.
