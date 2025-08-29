@@ -10,6 +10,8 @@ Demo account: `resume@test.com` / `Resume123` *(read-only — editing disabled)*
 👉 **[📂 Guest Chat Repo](https://github.com/WeitzY/chat-dashboard)**
 👉 **[📂 Core Functions Repo](https://github.com/WeitzY/core-dashboard-staff)**
 
+[![Watch the demo](https://img.youtube.com/vi/xu75WGMdmxU/maxresdefault.jpg)](https://www.youtube.com/watch?v=xu75WGMdmxU)
+
 ---
 
 ## About
