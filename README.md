@@ -1,6 +1,7 @@
 # Velin Core — Serverless AI Concierge (Backend)
 
 👉 **[🌐 Staff Dashboard Live](https://staff-dashboard-beryl.vercel.app/login)**
+
 Demo account: `resume@test.com` / `Resume123` *(read-only — editing disabled)*
 
 👉 **[💬 Guest Chat Live](https://chat-dashboard-tau-seven.vercel.app/)**
