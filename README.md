@@ -16,7 +16,7 @@ Demo account: `resume@test.com` / `Resume123` *(read-only — editing disabled)*
 
 ## About
 
-**Backend for Velin**, a production-style AI concierge system:
+**Backend for the hotel staff dashboard**, a production-style AI concierge system:
 Guest sends a message → AI answers from hotel Items/FAQs → optional staff note created.
 *(No long conversation history for simplicity in demo scope.)*
 
