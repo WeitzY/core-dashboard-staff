@@ -1,4 +1,4 @@
-# Velin Core — Serverless AI Concierge (Backend)
+# Core Serverless AI Concierge (Backend)
 
 👉 **[🌐 Staff Dashboard Live](https://staff-dashboard-beryl.vercel.app/login)**
 
